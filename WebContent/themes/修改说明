@@ -1,0 +1,19 @@
+css/core.css
+.pageFormContent dl.nowrap, .nowrap dl{width:100%; _width:96%; height:auto; clear: both;}
+
+azure/style.css
+default/style.css
+green/style.css
+purple/style.css
+silver/style.css
+#header .logo { background:url(../default/images/logo.png) no-repeat; _background:url(../default/images/logo.gif) no-repeat; }
+
+
+图片替换
+default/images/login_logo.gif
+default/images/login_banner.jpg
+/default/images/logo.png
+
+增加图片
+default/images/logo.gif
+default/images/login_title.gif

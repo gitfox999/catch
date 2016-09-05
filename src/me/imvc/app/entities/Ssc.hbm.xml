@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-23 17:08:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="me.imvc.app.entities.Ssc" table="ssc" catalog="biz">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="no" type="string">
+            <column name="no"/>
+        </property>
+        <property name="sum" type="java.lang.Integer">
+            <column name="sum" />
+        </property>
+        <property name="cross" type="java.lang.Integer">
+            <column name="cross" />
+        </property>
+        <property name="time" type="timestamp">
+            <column name="time" length="19" />
+        </property>
+        <property name="times" type="java.lang.Integer">
+            <column name="times" />
+        </property>
+        <property name="qihao" type="string">
+            <column name="qihao" />
+        </property>
+        <property name="daxiao" type="string">
+            <column name="daxiao" />
+        </property>
+        <property name="danshuang" type="string">
+            <column name="danshuang" />
+        </property>
+        <property name="longhuhe" type="string">
+            <column name="longhuhe" />
+        </property>
+        <property name="qiansan" type="string">
+            <column name="qiansan" />
+        </property>
+        <property name="zhongsan" type="string">
+            <column name="zhongsan" />
+        </property>
+        <property name="housan" type="string">
+            <column name="housan"/>
+        </property>
+        <property name="stime" type="timestamp">
+            <column name="stime" length="19" />
+        </property>
+        <property name="etime" type="timestamp">
+            <column name="etime" length="19" />
+        </property>
+         <property name="allwin" type="java.lang.Integer">
+            <column name="allwin" />
+        </property>
+        <property name="income" type="java.lang.Integer">
+            <column name="income" />
+        </property>
+        <property name="rate" type="java.lang.Integer">
+            <column name="rate" />
+        </property>
+    </class>
+</hibernate-mapping>

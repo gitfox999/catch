@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <bean type="org.apache.struts2.rest.handler.ContentTypeHandler" name="xls" class="me.imvc.core.XlsHandler" />
+    <bean type="org.apache.struts2.rest.handler.ContentTypeHandler"	name="xmlx" class="me.imvc.core.RestXmlXStreamHandler" />
+	<package name="imvc-default" extends="rest-default">
+		<interceptors>
+			<interceptor-stack name="imvcDefaultStack">
+				<interceptor-ref name="createSession" />
+				<interceptor-ref name="cookie" />
+				<interceptor-ref name="restDefaultStack" />
+				<!-- 在此加入你需要使用的拦截器 -->
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="imvcDefaultStack" />
+	</package>
+	<constant name="struts.mapper.class" value="rest" />
+	<constant name="struts.convention.action.suffix" value="Controller" />
+	<constant name="struts.convention.action.mapAllMatches" value="true" />
+	<constant name="struts.convention.default.parent.package" value="imvc-default" />
+	<constant name="struts.convention.result.path" value="/WEB-INF/views/" />
+	<constant name="struts.convention.action.name.separator" value="_" />	
+	<constant name="struts.action.extension" value="xhtml,,json,xmlx" />
+	<constant name="struts.convention.package.locators.basePackage"	value="me.imvc.app.controllers" />
+	<constant name="struts.convention.package.locators" value="controllers" />
+</struts>

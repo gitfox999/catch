@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+
+
+	<!-- 自动配置模式，拦截所有请求进行匹配 -->
+	<http auto-config="true" access-denied-page="/access_denied">
+		<!-- 指定不拦截的页 -->
+		<intercept-url pattern="/verification_code.jpg" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/a.jpg" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/dwz" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/dwz/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/themes/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/javascripts/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/stylesheets/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/attachments*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/files*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/qbzx/wkkq/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/qbzx/wkkq*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<intercept-url pattern="/access_denied" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/access_denied/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<intercept-url pattern="/login*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/login/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<intercept-url pattern="/test*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/test/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<!-- 退出跳转页 logout-url：指定了用于响应退出系统请求的URL。其默认值为：/j_spring_security_logout。 
+			logout-success-url：退出系统后转向的URL。 invalidate-session：指定在退出系统时是否要销毁Session 解决退出系统 
+			跳转到登陆页面/logout 而不是 session超时界面/access_denied/0/overTime -->
+		<logout logout-success-url="/login/0/logout"
+			invalidate-session="false" />
+
+		<!-- 指定登录页面及登录失败跳转页 login-page：指定登录页面（登录表单包含j_username和 j_password输入框） 
+			login-processing-url：指定了客户在登录页面中按下 Sign In按钮时要访问的 URL。与登录页面form的action一致。其默认值为：/j_spring_security_check。 
+			authentication-failure-url：指定了身份验证失败时跳转到的页面 default-target-url：指定了成功进行身份验证和授权后默认呈现给用户的页面 
+			always-use-default-target：指定了是否在身份验证通过后总是跳转到default-target-url -->
+		<form-login login-page="/login" default-target-url="/login/0/success"
+			always-use-default-target="true" authentication-failure-url="/access_denied/0/loginError"></form-login>
+
+		<!-- 权限配置 -->
+		 <intercept-url pattern="/**" access="ROLE_ADMIN,ROLE_TEACHER,ROLE_SG" /> 
+
+		<!-- session 管理 超时跳转页面 max-sessions:允许用户帐号登录的次数。范例限制用户只能登录一次。 exception-if-maximum-exceeded: 
+			默认为false，此值表示：用户第二次登录时，前一次的登录信息都被清空。 当exception-if-maximum-exceeded="true"时系统会拒绝第二次登录。 
+			expired-url :session失效后跳转的页面 -->
+		<session-management invalid-session-url="/login"
+			session-authentication-error-url="/login">
+			<!-- 第二次登录让第一次退出 -->
+			<!-- concurrency-control max-sessions="1" / -->
+			<!-- error-if-maximum-exceeded="true" 防止第二次登录concurrency-control属性 -->
+		</session-management>
+	</http>
+
+	<!-- 业务代码安全切入 
+	<global-method-security>
+		<protect-pointcut access="ROLE_ADMIN,ROLE_TEACHER"
+			expression="execution(* me.imvc.app.models.*.*(..))" />
+		切入点表达式语法格式： execution（modifiers-pattern? ret-type-pattern declaring-type-pattern? 
+			name-pattern（param-pattern）throws-pattern?）
+	</global-method-security> -->
+
+	<!-- 指定中文资源 -->
+	<beans:bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<beans:property name="basename"
+			value="classpath:org/springframework/security/messages_zh_CN" />
+	</beans:bean>
+
+	<!-- 认证管理器 -->
+	<authentication-manager>
+		<authentication-provider>
+			<password-encoder hash="md5" />
+			<jdbc-user-service data-source-ref="dataSource" />
+		</authentication-provider>
+	</authentication-manager>
+</beans:beans>

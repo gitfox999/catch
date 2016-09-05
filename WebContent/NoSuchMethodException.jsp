@@ -1,0 +1,1 @@
+<%response.setStatus(200);response.setContentType("application/json;charset=UTF-8");response.getWriter().write("{\"statusCode\":\"300\",\"message\":\"502\u4F60\u6267\u884C\u7684\u52A8\u4F5C\u4E0D\u5B58\u5728\",\"navTabId\":\"\",\"callbackType\":\"\",\"forwardUrl\":\"\"}");%>

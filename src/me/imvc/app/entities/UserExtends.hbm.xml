@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-23 17:08:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="me.imvc.app.entities.UserExtends" table="user_extends" catalog="biz">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="age" />
+        </property>
+        <property name="sex" type="string">
+            <column name="sex" />
+        </property>
+        <property name="tel" type="string">
+            <column name="tel" />
+        </property>
+        <property name="mtel" type="string">
+            <column name="mtel" />
+        </property>
+        <set name="userses" table="users" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_extend_id" />
+            </key>
+            <one-to-many class="me.imvc.app.entities.Users" />
+        </set>
+    </class>
+</hibernate-mapping>

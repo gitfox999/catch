@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"
+	default-autowire="byName">
+	<bean id="userModel" class="me.imvc.app.models.UserModel" scope="prototype" />
+	<bean id="roleModel" class="me.imvc.app.models.RoleModel" scope="prototype" />
+	<bean id="noticeModel" class="me.imvc.app.models.NoticeModel" scope="prototype" />	
+	<bean id="testModel" class="me.imvc.app.models.TestModel" scope="prototype" />	
+	
+	<bean id="memberModel" class="me.imvc.app.models.mana.MemberModel" scope="prototype" />
+	<bean id="earnrateModel" class="me.imvc.app.models.mana.EarnrateModel" scope="prototype" />
+	<bean id="orderModel" class="me.imvc.app.models.mana.OrderModel" scope="prototype" />
+	<bean id="sscModel" class="me.imvc.app.models.mana.SscModel" scope="prototype" />
+	<bean id="flowModel" class="me.imvc.app.models.mana.FlowModel" scope="prototype" />
+	<bean id="configModel" class="me.imvc.app.models.mana.ConfigModel" scope="prototype" />
+</beans>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-23 17:08:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="me.imvc.app.entities.Flow" table="flow" catalog="biz">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="member" class="me.imvc.app.entities.Member" fetch="select">
+            <column name="memid" />
+        </many-to-one>
+        <property name="type" type="java.lang.Integer">
+            <column name="type" />
+        </property>
+        <property name="money" type="java.lang.Integer">
+            <column name="money" />
+        </property>
+        <property name="tocard" type="string">
+            <column name="tocard" />
+        </property>
+        <property name="fromcard" type="string">
+            <column name="fromcard" />
+        </property>
+        <property name="tobank" type="string">
+            <column name="tobank" />
+        </property>
+        <property name="frombank" type="string">
+            <column name="frombank" />
+        </property>
+         <property name="dirction" type="java.lang.Integer">
+            <column name="dirction" />
+        </property>
+         <property name="ts" type="timestamp">
+            <column name="ts" length="19" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" />
+        </property>
+    </class>
+</hibernate-mapping>

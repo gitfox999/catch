@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-23 17:08:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="me.imvc.app.entities.EarnRate" table="earn_rate" catalog="biz">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="efrom" type="java.lang.Double">
+            <column name="efrom" />
+        </property>
+        <property name="eend" type="java.lang.Double">
+            <column name="eend" />
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="sort" />
+        </property>
+    </class>
+</hibernate-mapping>

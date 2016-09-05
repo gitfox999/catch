@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-23 17:08:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="me.imvc.app.entities.Authorities" table="authorities" catalog="biz">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="roles" class="me.imvc.app.entities.Roles" fetch="select">
+            <column name="user_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="users" class="me.imvc.app.entities.Users" fetch="select">
+            <column name="role_id" not-null="true" />
+        </many-to-one>
+        <property name="username" type="string">
+            <column name="username" not-null="true" />
+        </property>
+        <property name="authority" type="string">
+            <column name="authority" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

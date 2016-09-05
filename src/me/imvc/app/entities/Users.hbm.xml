@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-23 17:08:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="me.imvc.app.entities.Users" table="users" catalog="biz">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userExtends" class="me.imvc.app.entities.UserExtends" fetch="select">
+            <column name="user_extend_id" />
+        </many-to-one>
+        <property name="username" type="string">
+            <column name="username" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" not-null="true" />
+        </property>
+        <property name="enabled" type="boolean">
+            <column name="enabled" not-null="true" />
+        </property>
+        <property name="teacherId" type="java.lang.Long">
+            <column name="teacher_id" />
+        </property>
+        <set name="authoritieses" table="authorities" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="role_id" not-null="true" />
+            </key>
+            <one-to-many class="me.imvc.app.entities.Authorities" />
+        </set>
+    </class>
+</hibernate-mapping>
