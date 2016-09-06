@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-23 17:08:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="me.imvc.app.entities.Iplog" table="iplog" catalog="catc">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="ip" type="string">
+            <column name="ip" />
+        </property>
+        <property name="loca" type="string">
+            <column name="loca" />
+        </property>
+        <property name="oname" type="string">
+            <column name="oname" />
+        </property>
+        <property name="oversion" type="string">
+            <column name="oversion" />
+        </property>
+        <property name="bname" type="string">
+            <column name="bname" />
+        </property>
+        <property name="bversion" type="string">
+            <column name="bversion" />
+        </property>
+        <property name="bplug" type="string">
+            <column name="bplug" />
+        </property>
+        <property name="itime" type="timestamp">
+            <column name="itime" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

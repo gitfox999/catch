@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2016-09-05 19:37:44
+Date: 2016-09-06 21:26:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1025,23 +1025,46 @@ INSERT INTO `flow` VALUES ('910', '4', '2', '1000', null, null, null, null, '0',
 INSERT INTO `flow` VALUES ('911', '4', '3', '980', null, null, null, null, '1', '2016-08-28 20:05:00', '期数：20160828052,开奖号码：19275,投注详情：第1位：第1球,投注额：9.8');
 
 -- ----------------------------
+-- Table structure for ipfilter
+-- ----------------------------
+DROP TABLE IF EXISTS `ipfilter`;
+CREATE TABLE `ipfilter` (
+  `id` int(11) NOT NULL auto_increment,
+  `ip` varchar(20) default NULL,
+  `remark` varchar(255) default NULL,
+  `itime` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of ipfilter
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for iplog
 -- ----------------------------
 DROP TABLE IF EXISTS `iplog`;
 CREATE TABLE `iplog` (
   `id` int(11) NOT NULL auto_increment,
   `ip` varchar(20) default NULL,
+  `loca` varchar(255) default NULL,
   `oname` varchar(50) default NULL,
   `oversion` varchar(50) default NULL,
   `bname` varchar(50) default NULL,
   `bversion` varchar(50) default NULL,
   `bplug` varchar(50) default NULL,
+  `itime` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iplog
 -- ----------------------------
+INSERT INTO `iplog` VALUES ('1', '127.0.0.1', null, 'Windows', 'NT 10.0', 'Chrome', '51.0.2704.106', '无', '2016-09-06 20:12:32');
+INSERT INTO `iplog` VALUES ('2', '127.0.0.1', null, 'Windows', 'NT 10.0', 'Chrome', '51.0.2704.106', '无', '2016-09-06 20:20:59');
+INSERT INTO `iplog` VALUES ('3', '127.0.0.1', 'IANA:保留地址用于本地回送', 'Windows', 'NT 10.0', 'Chrome', '51.0.2704.106', '无', '2016-09-06 20:38:22');
+INSERT INTO `iplog` VALUES ('4', '127.0.0.1', 'IANA:保留地址用于本地回送', 'Windows', 'NT 10.0', 'Chrome', '51.0.2704.106', '无', '2016-09-06 20:38:22');
+INSERT INTO `iplog` VALUES ('5', '127.0.0.1', 'IANA:保留地址用于本地回送', 'Windows', 'NT 10.0', 'Chrome', '51.0.2704.106', '无', '2016-09-06 20:38:45');
 
 -- ----------------------------
 -- Table structure for member
