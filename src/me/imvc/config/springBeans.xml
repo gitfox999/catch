@@ -14,4 +14,7 @@
 	<bean id="sscModel" class="me.imvc.app.models.mana.SscModel" scope="prototype" />
 	<bean id="flowModel" class="me.imvc.app.models.mana.FlowModel" scope="prototype" />
 	<bean id="configModel" class="me.imvc.app.models.mana.ConfigModel" scope="prototype" />
+	
+	<bean id="iplogModel" class="me.imvc.app.models.mana.IplogModel" scope="prototype" />
+	<bean id="ipfilterModel" class="me.imvc.app.models.mana.IpfilterModel" scope="prototype" />
 </beans>

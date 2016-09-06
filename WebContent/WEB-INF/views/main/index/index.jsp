@@ -183,8 +183,8 @@ var $weburl="${webUrl}";
 						<li>
 								<a>登陆管理</a>
 								<ul>
-									<li><a href="${webUrl}/mana/member" target="navTab" rel="member">登陆列表</a></li>
-									<li><a href="${webUrl}/mana/config" target="navTab" rel="earnrate">ip过滤</a></li>
+									<li><a href="${webUrl}/mana/iplog" target="navTab" rel="iplog">登陆列表</a></li>
+									<li><a href="${webUrl}/mana/ipfilter" target="navTab" rel="ipfilter">ip过滤</a></li>
 								</ul>
 							</li>
 						</ul>

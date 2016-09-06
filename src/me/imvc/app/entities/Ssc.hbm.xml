@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2013-11-23 17:08:22 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="me.imvc.app.entities.Ssc" table="ssc" catalog="biz">
+    <class name="me.imvc.app.entities.Ssc" table="ssc" catalog="catc">
         <id name="id" type="java.lang.Long">
             <column name="id" />
             <generator class="identity" />
