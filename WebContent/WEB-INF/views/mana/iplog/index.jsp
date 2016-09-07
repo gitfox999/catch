@@ -20,8 +20,8 @@ orderField="iplogModel.orderField" orderDirection="iplogModel.orderDirection" me
 			</li>
 			<li style="width: 500px;">
 				<label>登陆时间：</label>
-				<input name="iplogModel.searchParams.and_itime_ge_string" type="text" class="date" dateFmt="yyyy-MM-dd HH:mm:ss" size="20" value="${iplogModel.searchParams.and_itime_ge_string[0] }" placeholder="开始时间"/>
-				<input name="iplogModel.searchParams.and_itime_le_string" type="text" class="date" dateFmt="yyyy-MM-dd HH:mm:ss" size="20" value="${iplogModel.searchParams.and_itime_le_string[0] }" placeholder="结束时间"/>
+				<input name="iplogModel.searchParams.and_itime_ge_string" type="text" class="date" dateFmt="yyyy-MM-dd HH:mm:ss" value="${iplogModel.searchParams.and_itime_ge_string[0] }" placeholder="开始时间"/>
+				<input name="iplogModel.searchParams.and_itime_le_string" type="text" class="date" dateFmt="yyyy-MM-dd HH:mm:ss" value="${iplogModel.searchParams.and_itime_le_string[0] }" placeholder="结束时间"/>
 			</li>
 			<li>
 				<label>登陆地点：</label>

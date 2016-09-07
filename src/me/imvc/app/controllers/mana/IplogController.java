@@ -1,5 +1,8 @@
 package me.imvc.app.controllers.mana;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import me.imvc.app.models.mana.IplogModel;
 import me.imvc.app.models.mana.OrderModel;
 import me.imvc.core.BaseController;
@@ -22,6 +25,12 @@ public class IplogController extends BaseController {
 
 	@Override
 	public String index() {
+		if(getIplogModel().getSearchParams() == null){
+			Map<String, Object> map = new HashMap<String, Object>();
+			getIplogModel().setSearchParams(map);
+		}
+		String[] str = {" (select i.ip from Ipfilter i)"};
+		getIplogModel().getSearchParams().put(" and_ip_not_in",str);
 		if(getIplogModel().getOrderField() == null){
 			getIplogModel().setOrderField("itime");
 			getIplogModel().setOrderDirection("desc");

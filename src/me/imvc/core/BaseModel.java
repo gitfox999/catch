@@ -234,7 +234,7 @@ public abstract class BaseModel{
 				String[] value_a=(String[])getSearchParams().get(key);
 				if (!value_a[0].isEmpty()) {
 					String field = key.replace("and_", " and ")
-							.replace("ro_", " or ").replace("not_", " not ")
+							.replace("ro_", " or ").replace("_not", " not ").replace("_in", " in ")
 							.replace("_zkh_", "(").replace("_ykh", ")")
 							.replace("_dot_", ".").replace("_like", " like \'%")
 							.replace("_eq", "=").replace("_ne", "!=")

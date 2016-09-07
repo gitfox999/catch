@@ -41,7 +41,7 @@ public class IpFilter implements Filter {
 		   String ip = IPUtil.getRemoteHost(request);
 		   List ll = iplogModel.getHt()
 				   .find("from Ipfilter where ip = '"+ip+"'");
-		   if(ll.isEmpty()){
+		   if(ll!=null && !ll.isEmpty()){
 			   return;
 		   }
 		   ClientInfo clientInfo = new ClientInfo(request.getHeader("user-agent"));   
