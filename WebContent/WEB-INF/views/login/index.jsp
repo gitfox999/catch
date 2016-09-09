@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>模拟报税系统</title>
+<title>模拟人资系统</title>
 <link href="${webUrl}/themes/css/login.css" rel="stylesheet" type="text/css" />
 <script src="${webUrl}/dwz/js/jquery-1.7.1.js" type="text/javascript"></script>
 <script src="${webUrl}/javascripts/dwz.core.js" type="text/javascript"></script>
@@ -26,11 +26,11 @@
 			<div class="loginForm">
 				<p>
 					<label>用户名：</label> <input type="text" id="j_username"
-						name='j_username' size="18" class="login_input" value="admin" />
+						name='j_username' size="18" class="login_input" value="" />
 				</p>
 				<p>
 					<label>密码：</label> <input type="password" id="j_password"
-						name='j_password' size="18" class="login_input" value="admin" />
+						name='j_password' size="18" class="login_input" value="" />
 				</p>
 					<p>
 						<label>验证码：</label>

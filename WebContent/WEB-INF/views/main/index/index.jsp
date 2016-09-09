@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
-<title>模拟报税系统</title>
+<title>模拟人资系统</title>
 <!-- 避免浏览器缓存  正式部署时要去掉  -->
 <% String time="?"+String.valueOf(System.currentTimeMillis()); request.setAttribute("time", time);%>
 <link href="${webUrl}/themes/default/style.css${time}" rel="stylesheet"
@@ -123,22 +123,19 @@ var $weburl="${webUrl}";
 	type="text/javascript"></script>
 <!--修改-->
 </head>
-
+<style type="">
+._username:hover{
+	text-decoration: none;
+}
+</style>
 <body scroll="no">
 	<div id="layout">
 		<!-- ==========header begin========== -->
 		<div id="header">
 			<div class="headerNav">
 				<a class="logo" href="#">标志</a>
-				<ul class="nav" style="display: none">
-					<li style="display: none" id="switchEnvBox"><a href="javascript:">（<span>全部</span>）切换角色
-					</a>
-						<ul>
-							<li><a href="${webUrl}/roles/0/defaultManagement">全部</a></li>
-							<li><a href="${webUrl}/roles/0/systemManagement">系统管理员</a></li>
-							<li><a href="${webUrl}/roles/0/headOfDepartment">部门主任</a></li>
-						</ul></li>
-					<li style="background: none;"><a height="400" class="_username">您好：&nbsp;&nbsp;<font color="red" size="+2">${username }</font></a></li>
+				<ul class="nav">
+					<li ><a height="400" class="_username">您好：&nbsp;&nbsp;<font color="red" size="+2">${username }</font></a></li>
 					<!-- style="display: none" -->
 					<li ><a href="${webUrl}/users/${session.userid}/edit" target="dialog" width="800" height="400"  >修改密码</a></li>
 					<li><a href="${webUrl}/j_spring_security_logout"

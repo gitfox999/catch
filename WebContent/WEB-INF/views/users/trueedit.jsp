@@ -9,7 +9,7 @@
 		<div class="pageFormContent" layoutH="56">
 			<p>
 				<label>登录名：</label> 
-				<input name="userModel.user.username" readonly="readonly" class="required" minlength="4" type="text" size="30"
+				<input name="userModel.user.username" class="required" minlength="4" type="text" size="30"
 					value="${userModel.user.username}" alt="请输入登录名" />
 			</p>
 			<p>
@@ -18,10 +18,9 @@
 			</p>
 
 			<p>
-				<label>姓名：</label><input readonly="readonly"  name="userModel.userExtend.name" class="required" type="text" size="30"
+				<label>姓名：</label><input name="userModel.userExtend.name" class="required" type="text" size="30"
 					value="${userModel.user.userExtends.name}" alt="请输入姓名" />
 			</p>
-			<div style="display: none;">
 			<p>
 				<label>性别：</label>
 				<select name="userModel.userExtend.sex">
@@ -59,7 +58,6 @@
 					<input name="userModel.ids" value="${role.id}" type="checkbox">${role.name}	
 				</c:forEach>
 			</p>
-			</div>
 		</div>
 		<div class="formBar">
 			<ul>

@@ -93,12 +93,8 @@ public class UsersController extends BaseController {
 
 	@Override
 	public String update() {
-		if(getId()==1){
-			return errorMsg("无法修改系统管理员的信息");
-		}else{
-			getUserModel().update(getId());
-			return successMsg("修改成功","users","closeCurrent");
-		}
+		getUserModel().update(getId());
+		return successMsg("修改成功","users","closeCurrent");
 		
 	}
 
