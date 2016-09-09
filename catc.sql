@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2016-09-06 21:26:01
+Date: 2016-09-09 19:37:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,12 +30,12 @@ CREATE TABLE `authorities` (
   KEY `authorities_ibfk_1` (`role_id`),
   CONSTRAINT `authorities_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `users` (`id`),
   CONSTRAINT `authorities_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of authorities
 -- ----------------------------
-INSERT INTO `authorities` VALUES ('30', '1', '1', 'admin', 'ROLE_ADMIN');
+INSERT INTO `authorities` VALUES ('32', '1', '1', 'admin', 'ROLE_ADMIN');
 
 -- ----------------------------
 -- Table structure for config
@@ -1034,11 +1034,12 @@ CREATE TABLE `ipfilter` (
   `remark` varchar(255) default NULL,
   `itime` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ipfilter
 -- ----------------------------
+INSERT INTO `ipfilter` VALUES ('1', '127.0.0.1', '本地', '2016-09-07 09:24:28');
 
 -- ----------------------------
 -- Table structure for iplog
@@ -1055,7 +1056,7 @@ CREATE TABLE `iplog` (
   `bplug` varchar(50) default NULL,
   `itime` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iplog
@@ -1065,6 +1066,8 @@ INSERT INTO `iplog` VALUES ('2', '127.0.0.1', null, 'Windows', 'NT 10.0', 'Chrom
 INSERT INTO `iplog` VALUES ('3', '127.0.0.1', 'IANA:保留地址用于本地回送', 'Windows', 'NT 10.0', 'Chrome', '51.0.2704.106', '无', '2016-09-06 20:38:22');
 INSERT INTO `iplog` VALUES ('4', '127.0.0.1', 'IANA:保留地址用于本地回送', 'Windows', 'NT 10.0', 'Chrome', '51.0.2704.106', '无', '2016-09-06 20:38:22');
 INSERT INTO `iplog` VALUES ('5', '127.0.0.1', 'IANA:保留地址用于本地回送', 'Windows', 'NT 10.0', 'Chrome', '51.0.2704.106', '无', '2016-09-06 20:38:45');
+INSERT INTO `iplog` VALUES ('6', '127.0.0.1', 'IANA:保留地址用于本地回送', 'Windows', 'NT 10.0', 'Chrome', '51.0.2704.106', '无', '2016-09-07 09:25:24');
+INSERT INTO `iplog` VALUES ('7', '127.0.0.1', 'IANA:保留地址用于本地回送', 'Windows', 'NT 10.0', 'Chrome', '51.0.2704.106', '无', '2016-09-07 09:26:17');
 
 -- ----------------------------
 -- Table structure for member
@@ -4111,7 +4114,7 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', '1', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1', null);
+INSERT INTO `users` VALUES ('1', '1', 'admin', '6a204bd89f3c8348afd5c77c717a097a', '1', null);
 
 -- ----------------------------
 -- Table structure for user_extends
@@ -4130,5 +4133,5 @@ CREATE TABLE `user_extends` (
 -- ----------------------------
 -- Records of user_extends
 -- ----------------------------
-INSERT INTO `user_extends` VALUES ('1', '管理员', '26', '男', '111', '112');
+INSERT INTO `user_extends` VALUES ('1', '管理员', null, '男', null, '');
 SET FOREIGN_KEY_CHECKS=1;
